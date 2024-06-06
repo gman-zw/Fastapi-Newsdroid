@@ -1,8 +1,18 @@
 from fastapi import FastAPI, Response
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import requests
 
 app = FastAPI()
+
+# Add CORS configuration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def root():
