@@ -1,0 +1,2 @@
+# Fastapi-Newsdroid
+Newsdroid API
