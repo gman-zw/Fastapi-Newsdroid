@@ -47,6 +47,18 @@ async def get_techcrunch_news():
     )
     return response.json()
 
+@app.get("/news")
+async def get_techcrunch_news():
+    response = requests.get(
+        f"https://newsapi.org/v2/top-headlines?",
+        params={
+            "apiKey": "12d7902e5d394fbaafbc43ba299fa50f",
+            "language": "en",
+            "category": "technology"
+        }
+    )
+    return response.json()
+
 
 @app.get("/zim-news")
 async def get_news():
